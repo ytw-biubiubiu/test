@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body style="height: 3000px;">
+		<!-- 按钮 -->
+		<button type="button" id="btn">加载更多资源</button>
+		<script type="text/javascript">
+			// 防抖开始
+			var timer;//undefind
+			
+			window.onresize=()=>{
+				if(timer!==undefined)clearTimeout(timer);
+				
+				
+				timer=setTimeout(function(){ console.log("发送ajax请求")},1000)
+			}
+			
+			// 防抖结束
+// ------------------------------------------------------------------------------------
+			 // 节流开始
+			var canClick=true;
+			
+			btn.onclick=()=>{
+				if(canClick){
+					canClick=false;
+					console.log("发送请求");
+					
+					setTimeout(()=>{
+						console.log("加载完成");
+						canClick=true;
+					},1000)
+				}
+			}
+			
+			
+			 // 节流结束
+			 
+			 
+			 
+		</script>
+	</body>
+</html>
