@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+			}
+			li ul{
+				display: none;
+			}
+			.open{
+			
+			}
+			.open + ul{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="tree">
+			<li>
+				<span class="open">123</span>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</li>
+			<li>
+				<span>456</span>
+				<ul>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+				</ul>
+			</li>
+			<li>
+				<span>789</span>
+				<ul>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+				</ul>
+			</li>
+		</ul>
+		<div data-biubiu = "biu">
+			
+		</div>
+		
+		
+		
+		
+		<script type="text/javascript">
+			var divEle=document.querySelector("[data-biubiu=biu]")
+			console.log(divEle)
+			var tree=document.getElementById('tree')
+			var spans=document.querySelectorAll("ul.tree span")
+			for (let span of spans) {
+				span.onclick=function(){
+					if(this.className=="open"){
+						this.className=""
+					}else{
+					var	opening=document.querySelector("ul.tree span.open")
+					if(opening!==null){
+						opening.className=""
+					}
+					this.className="open"
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

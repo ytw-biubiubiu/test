@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	    <div>
+			<input type="text" id="txt">		<!-- 用于输入 -->	
+			<p id="show"></p>					<!-- 用于显示 -->
+		</div>
+	</body>
+	<script type="text/javascript">
+		//创建一个空对象 用于接收新值
+		var obj={};
+		
+		//给空对象设置属性
+		Object.defineProperty(obj,'txt',{
+			set:newValue=>{
+				document.getElementById('txt').value=newValue
+				document.getElementById('show').innerHTML=newValue
+			}
+		})
+		
+		// 设置监听
+		document.addEventListener('keyup',e=>{
+			obj.txt=e.target.value
+		})
+		
+		
+		
+		
+	
+	</script>
+</html>
